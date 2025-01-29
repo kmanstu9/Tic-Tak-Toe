@@ -17,11 +17,13 @@ public int CheckWinner(string[] boardArray)
  */
 
 
-//TicTacToeTools t = new TicTacToeTools();
+
+using Tik-Tak-Toe;// create TicTacToeTools object
+TicTacToeTools t = new TicTacToeTools();
 
 // create board
 //int[] board = Enumerable.Range(1, 9).ToArray();
-using System.Diagnostics;
+
 
 string choice = "";
 string player1 = "X";
@@ -54,8 +56,7 @@ do
         activePlayer = player2;
     }
 
-    // change player's turn
-    turn ++;
+    
 
     do
     { 
@@ -67,9 +68,15 @@ do
     board[numericChoice] = activePlayer;
 
 
+    // change player's turn
+    turn++;
+
+    // check for winner
     gameStatus = t.CheckWinner(board);
 
 } while (gameStatus == 0);
+
+Console.WriteLine($"Player {gameStatus} wins!");
 
 
 
